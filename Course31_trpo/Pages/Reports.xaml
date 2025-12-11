@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Course31_trpo.Pages.Reports">
+    <ScrollView>
+        <VerticalStackLayout Spacing="5">
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button Text="&lt;" Command="{Binding Year.Prev}" FontSize="Large"/>
+                <Border Padding="15,5,15,5">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20"/>
+                    </Border.StrokeShape>
+                    <Label Text="{Binding Year.DisplayValue.Value}" FontSize="Large"/>
+                </Border>
+                <Button Text=">" Command="{Binding Year.Next}" FontSize="Large"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button Text="&lt;" Command="{Binding Month.Prev}" FontSize="Large"/>
+                <Border Padding="15,5,15,5">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20"/>
+                    </Border.StrokeShape>
+                    <Label Text="{Binding Month.DisplayValue.Value.Item}" FontSize="Large"/>
+                </Border>
+                <Button Text=">" Command="{Binding Month.Next}" FontSize="Large"/>
+            </HorizontalStackLayout>
+            <Border Padding="5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20"/>
+                </Border.StrokeShape>
+                <CollectionView ItemsSource="{Binding Transfers}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Padding="5">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20"/>
+                                </Border.StrokeShape>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="25"/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <HorizontalStackLayout Grid.Row="0" Spacing="5">
+                                        <Image Source="{Binding Image.Value}" Aspect="AspectFit"/>
+                                        <Label Text="{Binding Name}" FontSize="Medium"/>
+                                        <HorizontalStackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding SwitchCommand}"/>
+                                        </HorizontalStackLayout.GestureRecognizers>
+                                    </HorizontalStackLayout>
+                                    <CollectionView ItemsSource="{Binding DisplayList}" Grid.Row="1">
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <HorizontalStackLayout Spacing="5">
+                                                    <Label Text="{Binding Amount}"/>
+                                                    <Label Text="{Binding Descrition}"/>
+                                                    <Label Text="{Binding Company}"/>
+                                                </HorizontalStackLayout>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Border>
+            <Border Padding="15,5,15,5" HorizontalOptions="Center">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20"/>
+                </Border.StrokeShape>
+                <CollectionView ItemsSource="{Binding ModulesList}" HorizontalOptions="Center">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="{Binding ModuleName.Value}" VerticalOptions="Center"/>
+                                <Button Command="{Binding Load}" Text="{Binding LoadText.Value}"/>
+                            </HorizontalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

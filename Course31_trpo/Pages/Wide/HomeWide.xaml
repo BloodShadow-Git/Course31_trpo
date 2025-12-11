@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ctrl="clr-namespace:Course31_trpo.Controls"
+             x:Class="Course31_trpo.Pages.Wide.HomeWide">
+    <ScrollView>
+        <Grid Padding="10" RowSpacing="5" ColumnSpacing="5" MinimumHeightRequest="800">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+            <Border Padding="5" Grid.Row="0" Grid.Column="0" >
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20"/>
+                </Border.StrokeShape>
+                <ctrl:Square Grid.Column="1">
+                    <ctrl:BindableGraphicsView Drawable="{Binding YearChart.Value}"
+                                               UpdateTrigger="{Binding YearChart.Value.ShouldUpdate.Value}"
+                                               OnClick="{Binding YearChart.Value.Click}"/>
+                </ctrl:Square>
+            </Border>
+            <Border Padding="5" Grid.Row="0" Grid.Column="1" >
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout VerticalOptions="Center" Spacing="5">
+                    <Label Text="{Binding IncomeText.Value}"
+                           HorizontalTextAlignment="Center"/>
+                    <Label Text="{Binding Income.Value.PrevValue.Value.Value.Value}" 
+                           TextColor="{Binding Income.Value.PrevValue.Value.Color.Value}" 
+                           HorizontalTextAlignment="Center"/>
+                    <Image Source="{Binding Income.Value.ChangeImage.Value}"
+                           Aspect="AspectFill"/>
+                    <Label Text="{Binding Income.Value.NewValue.Value.Value.Value}" 
+                           TextColor="{Binding Income.Value.NewValue.Value.Color.Value}" 
+                           HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Border>
+            <Border Padding="5" Grid.Row="0" Grid.Column="2" >
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout VerticalOptions="Center" Spacing="5">
+                    <Label Text="{Binding ExpensesText.Value}"
+                           HorizontalTextAlignment="Center"/>
+                    <Label Text="{Binding Expenses.Value.PrevValue.Value.Value.Value}"
+                           TextColor="{Binding Expenses.Value.PrevValue.Value.Color.Value}"
+                           HorizontalTextAlignment="Center"/>
+                    <Image Source="{Binding Expenses.Value.ChangeImage.Value}"
+                           Aspect="AspectFill"/>
+                    <Label Text="{Binding Expenses.Value.NewValue.Value.Value.Value}" 
+                           TextColor="{Binding Expenses.Value.NewValue.Value.Color.Value}"
+                           HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Border>
+            <Border Padding="5" Grid.Row="0" Grid.Column="3" >
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout VerticalOptions="Center" Spacing="5">
+                    <Label Text="{Binding SummaryText.Value}"
+                           HorizontalTextAlignment="Center"/>
+                    <Label Text="{Binding Summary.Value.PrevValue.Value.Value.Value}"
+                           TextColor="{Binding Summary.Value.PrevValue.Value.Color.Value}"
+                           HorizontalTextAlignment="Center"/>
+                    <Image Source="{Binding Summary.Value.ChangeImage.Value}"
+                           Aspect="AspectFill"/>
+                    <Label Text="{Binding Summary.Value.NewValue.Value.Value.Value}" 
+                           TextColor="{Binding Summary.Value.NewValue.Value.Color.Value}"
+                           HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Border>
+            <Border Padding="5" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20"/>
+                </Border.StrokeShape>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ctrl:BindableGraphicsView Drawable="{Binding MonthYearDio.Value}"
+                                               UpdateTrigger="{Binding MonthYearDio.Value.ShouldUpdate.Value}"
+                                               OnClick="{Binding MonthYearDio.Value.Click}"
+                                               Grid.Column="0"/>
+                    <CollectionView Grid.Column="1" ItemsSource="{Binding MonthYearDio.Value.Legend}" 
+                                    HorizontalOptions="Center" 
+                                    VerticalOptions="Center">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <HorizontalStackLayout Spacing="5">
+                                    <Rectangle BackgroundColor="{Binding Figure.Color}" HeightRequest="25" WidthRequest="25"/>
+                                    <Label Text="{Binding FigureName}" VerticalOptions="Center"/>
+                                </HorizontalStackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+            </Border>
+        </Grid>
+    </ScrollView>
+</ContentView>

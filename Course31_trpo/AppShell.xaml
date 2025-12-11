@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Course31_trpo.AppShell"
+    x:DataType="local:AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Course31_trpo.Pages"
+    xmlns:local="clr-namespace:Course31_trpo"
+    Title="Course31_trpo">
+
+    <ShellContent ContentTemplate="{DataTemplate pages:Home}" Route="Home" Title="{Binding HomeTitleText.Value}"/>
+    <ShellContent ContentTemplate="{DataTemplate pages:Reports}" Route="Reports" Title="{Binding ReportTitleText.Value}"/>
+    <ShellContent ContentTemplate="{DataTemplate pages:Loaded}" Route="Loaded" Title="{Binding LoadedItemsTitleText.Value}"/>
+    <ShellContent ContentTemplate="{DataTemplate pages:Settings}" Route="Settings" Title="{Binding SettingsTitleText.Value}"/>
+</Shell>

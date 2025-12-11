@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Course31_trpo.Pages.Settings">
+    <ScrollView Padding="15">
+        <VerticalStackLayout Spacing="5">
+            <VerticalStackLayout>
+                <Label Text="{Binding DefPathText.Value}"/>
+                <HorizontalStackLayout>
+                    <Entry Text="{Binding DefaultPath.Value}" ClearButtonVisibility="WhileEditing" ReturnCommand="{Binding DefaultPathValid}"/>
+                    <Button Text="{Binding SelDefPathText.Value}" Command="{Binding SelectDefPath}"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <Label Text="{Binding ThemeText.Value}"/>
+                <Picker ItemsSource="{Binding ThemesList}" SelectedIndex="{Binding SelectedThemeIndex.Value}"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <Label Text="{Binding AutorunText.Value}"/>
+                <Border Padding="10,5,5,5">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20"/>
+                    </Border.StrokeShape>
+                    <CollectionView ItemsSource="{Binding Autorun}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <HorizontalStackLayout Spacing="5">
+                                    <Label Text="{Binding Key}" VerticalOptions="Center"/>
+                                    <CheckBox IsChecked="{Binding Value.Value}"/>
+                                </HorizontalStackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <Label Text="{Binding LanguageText.Value}"/>
+                <Picker ItemsSource="{Binding AvailableLocalizations}" SelectedIndex="{Binding SelectedLanguageIndex.Value}"/>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
