@@ -26,10 +26,10 @@ namespace Course31_trpo
 
             MauiProgram.LocalizationManager.CurrentLocalization.Subscribe(_ =>
             {
-                _homeTitleText.Value = MauiProgram.LocalizationManager.Localize<string>(LocalizationKeys.HOME);
-                _loadedItemsTitleText.Value = MauiProgram.LocalizationManager.Localize<string>(LocalizationKeys.LOADED);
-                _reportTitleText.Value = MauiProgram.LocalizationManager.Localize<string>(LocalizationKeys.REPORTS);
-                _settingsTitleText.Value = MauiProgram.LocalizationManager.Localize<string>(LocalizationKeys.SETTINGS);
+                _homeTitleText.Value = MauiProgram.LocalizationManager.Localize<string>(LocalizationKeys.HOME) ?? LocalizationKeys.HOME;
+                _loadedItemsTitleText.Value = MauiProgram.LocalizationManager.Localize<string>(LocalizationKeys.LOADED) ?? LocalizationKeys.LOADED;
+                _reportTitleText.Value = MauiProgram.LocalizationManager.Localize<string>(LocalizationKeys.REPORTS) ?? LocalizationKeys.REPORTS;
+                _settingsTitleText.Value = MauiProgram.LocalizationManager.Localize<string>(LocalizationKeys.SETTINGS) ?? LocalizationKeys.SETTINGS;
             });
         }
     }
