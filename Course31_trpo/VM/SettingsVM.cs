@@ -94,7 +94,10 @@ namespace Course31_trpo.VM
                 SelectedLanguageIndex.Value = MauiProgram.LocalizationManager.AvailableLocalizations
                     .ToList().IndexOf(_settingsData.CurrentValue.CurrentLocalization.CurrentValue));
             SelectedLanguageIndex.Subscribe(_ =>
-                _settingsData.CurrentValue.CurrentLocalization.Value = MauiProgram.LocalizationManager.AvailableLocalizations.ElementAt(SelectedLanguageIndex.CurrentValue));
+            {
+                if (SelectedLanguageIndex.CurrentValue == -1) { return; }
+                _settingsData.CurrentValue.CurrentLocalization.Value = MauiProgram.LocalizationManager.AvailableLocalizations.ElementAt(SelectedLanguageIndex.CurrentValue);
+            });
         }
 
         public readonly struct AutorunVM(string key, BindableReactiveProperty<bool> value)
