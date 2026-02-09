@@ -13,9 +13,9 @@
 | Аналог | Полностью оффлайн работа | Форматы данных для загрузки | Цена (примерно, руб./мес или разово) | Масштабируемость |
 | --- | --- | --- | --- | --- |
 | PnL/ДДС/Баланс (1C/Баланс-2) | Да, локальная установка без интернета | XML, Excel, DBF, текстовые файлы, внутренние форматы 1C | 50 000–66 000 руб. разово; от 755 руб./мес в облаке | Высокая: клиент-сервер, многопользовательская, для средних/крупных фирм ​|
-| Power BI | Да (Desktop с импортом данных локально) ​| Excel, CSV, XML, JSON, PDF, Parquet, folders | Pro: ~800 руб./польз./мес; Premium: от 5 000 USD/мес за capacity | Высокая: миллионы строк, enterprise capacity ​|
-| Tableau | Да (Desktop локально) ​| Excel, CSV, JSON, spatial files, databases (import/live) | Creator: ~70 USD/польз./мес; от 840 USD/год | Enterprise-grade, сложные дашборды для больших данных ​|
-| Google Looker Studio | Нет (требует интернет для connectors и refresh) ​| Google сервисы (GA4, Sheets), third-party via connectors ​| Бесплатно базово; Pro: от 9 USD/польз./мес + connectors 20–350 USD/мес ​| Средняя: до 50 клиентов, проблемы с большими данными без BigQuery |
+| Power BI | Да (Desktop с импортом данных локально) ​| Excel, CSV, XML, JSON, PDF, Parquet, папки | Pro: ~800 руб./польз./мес; Premium: от 5 000$/мес за capacity | Высокая: миллионы строк, enterprise capacity ​|
+| Tableau | Да (Desktop локально) ​| Excel, CSV, JSON, spatial files, БД (import/live) | Creator: ~70 USD/польз./мес; от 840 USD/год | Enterprise-grade, сложные дашборды для больших данных ​|
+| Google Looker Studio | Нет (требует интернет для connectors и обновлений) ​| Google сервисы (GA4, Sheets), Третье стронние via connectors ​| Бесплатно базово; Pro: от 9$/польз./мес + connectors 20–350$/мес ​| Средняя: до 50 клиентов, проблемы с большими данными без BigQuery |
 
 Моё ПО:
 | Полностью оффлайн работа | Форматы данных для загрузки | Цена (примерно, руб./мес или разово) | Масштабируемость |
