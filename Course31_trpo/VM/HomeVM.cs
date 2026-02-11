@@ -96,43 +96,6 @@ namespace Course31_trpo.VM
             FillChanges(_income);
             FillChanges(_expenses, true);
             FillChanges(_summary);
-            //if (prevISum < lastISum)
-            //{
-            //    _income.CurrentValue.PrevValue.Value.Color.Value = _badColor;
-            //    _income.CurrentValue.NewValue.Value.Color.Value = _goodColor;
-            //    _income.CurrentValue.ChangeImage.Value = _downGreen;
-            //}
-            //else if (prevISum > lastISum)
-            //{
-            //    _income.CurrentValue.PrevValue.Value.Color.Value = _goodColor;
-            //    _income.CurrentValue.NewValue.Value.Color.Value = _badColor;
-            //    _income.CurrentValue.ChangeImage.Value = _downRed;
-            //}
-            //else
-            //{
-            //    _income.CurrentValue.PrevValue.Value.Color.Value = _normColor;
-            //    _income.CurrentValue.NewValue.Value.Color.Value = _normColor;
-            //    _income.CurrentValue.ChangeImage.Value = _downWhite;
-            //}
-
-            //if (prevESum < lastESum)
-            //{
-            //    _expenses.CurrentValue.PrevValue.Value.Color.Value = _badColor;
-            //    _expenses.CurrentValue.NewValue.Value.Color.Value = _goodColor;
-            //    _expenses.CurrentValue.ChangeImage.Value = _downGreen;
-            //}
-            //else if (prevESum > lastESum)
-            //{
-            //    _expenses.CurrentValue.PrevValue.Value.Color.Value = _goodColor;
-            //    _expenses.CurrentValue.NewValue.Value.Color.Value = _badColor;
-            //    _expenses.CurrentValue.ChangeImage.Value = _downRed;
-            //}
-            //else
-            //{
-            //    _expenses.CurrentValue.PrevValue.Value.Color.Value = _normColor;
-            //    _expenses.CurrentValue.NewValue.Value.Color.Value = _normColor;
-            //    _expenses.CurrentValue.ChangeImage.Value = _downWhite;
-            //}
         }
 
         private static (int, int) GetIESums(Report source)
